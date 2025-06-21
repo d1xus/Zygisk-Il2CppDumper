@@ -1,5 +1,5 @@
 #ifndef DO_API_NO_RETURN
-#define DO_API_NO_RETURN(r, n, p) DO_API(r,n,p,n)
+#define DO_API_NO_RETURN(r, n, p, sym) DO_API(r,n,p,sym)
 #endif
 
 DO_API(int, il2cpp_init, (const char* domain_name), "RKpxmzyvaih");
