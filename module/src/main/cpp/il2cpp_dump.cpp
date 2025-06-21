@@ -17,7 +17,9 @@
 #include "il2cpp-tabledefs.h"
 #include "il2cpp-class.h"
 
-#define DO_API(r, n, p) r (*n) p
+#define DO_API(r, n, p, sym) r (*n) p
+#include "il2cpp-api-functions.h"
+#undef DO_API
 
 #include "il2cpp-api-functions.h"
 
@@ -26,17 +28,18 @@
 static uint64_t il2cpp_base = 0;
 
 void init_il2cpp_api(void *handle) {
-#define DO_API(r, n, p) {                      \
-    n = (r (*) p)xdl_sym(handle, #n, nullptr); \
-    if(!n) {                                   \
-        LOGW("api not found %s", #n);          \
-    }                                          \
+#define DO_API(r, n, p, sym) {                             \
+    n = (r (*) p)xdl_sym(handle, sym, nullptr);            \
+    if(!n) {                                               \
+        LOGW("api not found %s (%s)", #n, sym);            \
+    }                                                      \
 }
 
 #include "il2cpp-api-functions.h"
 
 #undef DO_API
 }
+
 
 std::string get_method_modifier(uint32_t flags) {
     std::stringstream outPut;
