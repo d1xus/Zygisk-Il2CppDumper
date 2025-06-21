@@ -283,7 +283,7 @@ DO_API(void, il2cpp_free_captured_memory_snapshot, (Il2CppManagedMemorySnapshot 
 DO_API(void, il2cpp_set_find_plugin_callback, (Il2CppSetFindPlugInCallback method), "bEiBDjvbhyM");
 
 // Logging
-DO_API(void, il2cpp_register_log_callback, (Il2CppLogCallback method));
+//DO_API(void, il2cpp_register_log_callback, (Il2CppLogCallback method));
 
 // Debugger
 DO_API(void, il2cpp_debugger_set_agent_options, (const char* options), "GivckKinKmC");
